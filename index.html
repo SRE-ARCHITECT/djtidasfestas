@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ TI das Festas</title>
+    <meta http-equiv="refresh" content="300; url=https://sites.google.com/view/djtidasfestas/" />
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="Zaqr2NdVAnu22yE8snKqI2v9W2cQlhWI9cngmSbSHGwso" />
+    <!-- Preconnect para recursos externos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://nauseousrocketjosephine.com">
+    
+    <!-- Adsterra script -->
+    <script type='text/javascript' src='//nauseousrocketjosephine.com/05/94/9c/05949c431e841c6647f72fd9001deb44.js' async></script>
+    
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        font-family: 'Montserrat', system-ui, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #1a1a1a, #3a0000);
+        color: white;
+        position: relative;
+        overflow-x: hidden;
+      }
+      
+      .container {
+        width: 90%;
+        max-width: 600px;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        margin: 0 auto;
+        border: 1px solid rgba(255, 204, 0, 0.2);
+        z-index: 1;
+      }
+      
+      /* Estilo para a imagem de fundo */
+      .bg-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.2;
+        z-index: -1;
+      }
+      
+      /* Estilo para a imagem do DJ */
+      .dj-image {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 10px;
+        margin: 20px auto;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease;
+      }
+      
+      .dj-image:hover {
+        transform: scale(1.02);
+      }
+      
+      h1 {
+        font-size: clamp(2rem, 6vw, 2.8rem);
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #ffcc00;
+        font-weight: 800;
+      }
+      
+      /* Estilo para as notas musicais */
+      .music-note {
+        font-size: 1.8rem;
+        display: block;
+        margin: 5px 0;
+        color: #ffcc00;
+      }
+      
+      .logo {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(255, 204, 0, 0.3);
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.03); }
+        100% { transform: scale(1); }
+      }
+      
+      p {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        margin: 10px 0;
+      }
+      
+      a {
+        color: #ffcc00;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: inline-block;
+        margin-top: 5px;
+        transition: all 0.3s ease;
+      }
+      
+      a:hover {
+        background-color: rgba(255, 204, 0, 0.2);
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+      
+      .loader {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #ffcc00;
+        animation: spin 1s linear infinite;
+        margin: 15px auto;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      .price {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        color: #ffcc00;
+        font-weight: bold;
+        margin: 20px 0;
+        padding: 15px;
+        background-color: transparent;
+        border-radius: 10px;
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .countdown {
+        font-weight: bold;
+        color: #ffcc00;
+      }
+      
+      .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 15px 0;
+      }
+      
+      .feature {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 10px 15px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        border: 1px solid rgba(255, 204, 0, 0.5);
+        transition: all 0.3s ease;
+        color: #fff;
+      }
+      
+      .feature:hover {
+        background-color: rgba(255, 204, 0, 0.2);
+        transform: translateY(-2px);
+      }
+      
+      .music-icon {
+        font-size: 1.5rem;
+        margin: 0 5px;
+        animation: bounce 2s infinite alternate;
+        display: inline-block;
+      }
+      
+      @keyframes bounce {
+        from { transform: translateY(0); }
+        to { transform: translateY(-5px); }
+      }
+      
+      /* Novo estilo para botão de ação */
+      .cta-button {
+        display: inline-block;
+        padding: 12px 25px;
+        background: #ffcc00;
+        color: #000;
+        font-weight: bold;
+        border-radius: 30px;
+        margin-top: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+        font-size: 1.1rem;
+      }
+      
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+        background: #ffd700;
+      }
+      
+      /* Estilo para o botão do WhatsApp */
+      .whatsapp-button {
+        display: inline-block;
+        padding: 12px 25px;
+        background: #25d366;
+        color: white;
+        font-weight: bold;
+        border-radius: 30px;
+        margin: 20px 0 10px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        font-size: 1.1rem;
+      }
+      
+      .whatsapp-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        background: #1da851;
+      }
+      
+      /* Estilo para o botão do YouTube */
+      .youtube-button {
+        display: inline-block;
+        padding: 12px 25px;
+        background: #ff0000;
+        color: white;
+        font-weight: bold;
+        border-radius: 30px;
+        margin: 10px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        font-size: 1.1rem;
+      }
+      
+      .youtube-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+        background: #cc0000;
+      }
+      
+      .countdown-container {
+        margin-top: 20px;
+        position: relative;
+      }
+      
+      .redirect-text {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+      }
+      
+      .click-here {
+        display: inline-block;
+        color: #ffcc00;
+        text-decoration: underline;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+      
+      /* Estilo para contêineres de anúncios */
+      .ad-container {
+        width: 100%;
+        min-height: 100px;
+        margin: 15px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      
+      @media (max-width: 480px) {
+        .container {
+          width: 100%;
+          padding: 15px;
+        }
+        
+        .features {
+          flex-direction: column;
+        }
+        
+        .dj-image {
+          max-width: 100%;
+        }
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+  <body>
+    <!-- Imagem de fundo com baixa opacidade -->
+    <img src="dj-background.jpg" alt="" class="bg-image" loading="lazy">
+    
+    <div class="container">
+      <!-- Logo removido -->
+      
+      <div class="music-note">♪</div>
+      <h1>DJ TI DAS FESTAS</h1>
+      <div class="music-note">♪</div>
+      
+      <!-- Adicionando a imagem do DJ -->
+      <img src="dj-image.jpg" alt="DJ em ação com equipamento profissional" class="dj-image" loading="lazy">
+      
+      <!-- Espaço para anúncio Adsterra -->
+      <div id="ad-container-1" class="ad-container"></div>
+      
+      <p><i class="fas fa-star"></i> Transformando sua festa em um momento inesquecível! <i class="fas fa-star"></i></p>
+      <p>Som, iluminação e animação de qualidade para todos os eventos</p>
+      
+      <div class="features">
+        <span class="feature"><i class="fas fa-glass-cheers"></i> Casamentos</span>
+        <span class="feature"><i class="fas fa-birthday-cake"></i> Aniversários</span>
+        <span class="feature"><i class="fas fa-graduation-cap"></i> Formaturas</span>
+        <span class="feature"><i class="fas fa-building"></i> Eventos Corporativos</span>
+        <span class="feature"><i class="fas fa-headphones"></i> Equipamento Profissional</span>
+      </div>
+      
+      <!-- Botão WhatsApp no lugar do texto de orçamento -->
+      <a href="https://wa.me/5515981289669" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i> FALE AGORA por WhatsApp
+      </a>
+      
+      <!-- Botão para a playlist do YouTube -->
+      <a href="https://www.youtube.com/playlist?list=PLUcjuRb_2hT7szsGUJSy4ZsaLM-QQ5XNp" class="youtube-button" target="_blank">
+        <i class="fab fa-youtube"></i> FESTAS REALIZADAS
+      </a>
+      
+      <!-- Botão de ação mais destacado -->
+      <a href="https://sites.google.com/view/djtidasfestas/" class="cta-button">
+        <i class="fas fa-volume-up"></i> VER MAIS DETALHES
+      </a>
+      
+      <!-- Espaço para anúncio Adsterra -->
+      <div id="ad-container-2" class="ad-container"></div>
+      
+      <div class="countdown-container">
+        <div class="loader"></div>
+        <p class="redirect-text">Redirecionando para o site em <span id="countdown" class="countdown">300</span> segundos...</p>
+        <a href="https://sites.google.com/view/djtidasfestas/" class="click-here"><i class="fas fa-external-link-alt"></i> Clique aqui</a> se não for redirecionado automaticamente.
+      </div>
+    </div>
+
+    <script>
+      // Contador regressivo
+      let timeLeft = 300;
+      const countdownElement = document.getElementById('countdown');
+      
+      const countdownTimer = setInterval(function() {
+        timeLeft--;
+        countdownElement.textContent = timeLeft;
+        if (timeLeft <= 0) {
+          clearInterval(countdownTimer);
+          window.location.href = "https://sites.google.com/view/djtidasfestas/";
+        }
+      }, 1000);
+      
+      // Adicionar atributo de altura e largura às imagens para melhorar CLS
+      window.addEventListener('load', function() {
+        const djImage = document.querySelector('.dj-image');
+        if (djImage && djImage.complete) {
+          djImage.setAttribute('width', djImage.naturalWidth);
+          djImage.setAttribute('height', djImage.naturalHeight);
+        }
+      });
+      
+      // Carregamento otimizado para anúncios
+      document.addEventListener('DOMContentLoaded', function() {
+        // Inicializar contêineres de anúncios após o carregamento da página
+        setTimeout(function() {
+          // Aqui você pode adicionar código específico para inicializar anúncios
+          console.log('Anúncios carregados');
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
